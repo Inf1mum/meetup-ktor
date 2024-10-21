@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ksp)
 }
 
 application {
@@ -26,4 +27,5 @@ dependencies {
     implementation(libs.bundles.ktor)
     implementation(libs.bundles.logging)
     implementation(libs.bundles.koin)
+    ksp(libs.koin.ksp)
 }

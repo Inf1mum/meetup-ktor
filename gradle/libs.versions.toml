@@ -3,6 +3,8 @@ ktorVersion = "3.0.0"
 kotlinVersion = "2.0.21"
 logbackVersion = "1.5.6"
 koinVersion = "4.0.0"
+kspVersion = "2.0.20-1.0.25"
+koinKspVersion = "2.0.0-Beta1"
 
 [libraries]
 ktor-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktorVersion" }
@@ -11,14 +13,17 @@ ktor-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version
 ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logbackVersion" }
 koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koinVersion" }
-
+koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koinKspVersion" }
+koin-ksp = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koinKspVersion" }
 
 [bundles]
 ktor = ["ktor-core", "ktor-netty", "ktor-negotiation", "ktor-serialization"]
-koin = ["koin-ktor"]
+koin = ["koin-ktor", "koin-annotations"]
 logging = ["logback"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktorVersion" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
+

@@ -5,10 +5,10 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import org.koin.ktor.ext.inject
 import ru.tbank.entity.User
-import ru.tbank.repository.UserRepository
+import ru.tbank.service.UserService
 
 fun Application.configureRouting() {
-    val userRepository by inject<UserRepository>()
+    val userService by inject<UserService>()
 
     routing {
         get("/") {
@@ -20,7 +20,7 @@ fun Application.configureRouting() {
         }
 
         get("/user/db") {
-            call.respond(userRepository.findAll())
+            call.respond(userService.findAll())
         }
     }
 }
