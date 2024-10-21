@@ -25,4 +25,5 @@ repositories {
 dependencies {
     implementation(libs.bundles.ktor)
     implementation(libs.bundles.logging)
+    implementation(libs.bundles.koin)
 }
