@@ -6,3 +6,9 @@ ktor:
             - ru.tbank.ApplicationKt.module
 app:
     message: "Hello Tbank"
+
+integration:
+    dog-fact:
+        host: "https://dogapi.dog/api/v2/"
+    cat-fact:
+        host: "https://catfact.ninja/"

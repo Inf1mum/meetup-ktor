@@ -1,7 +1,5 @@
 package ru.tbank.config
 
-import com.typesafe.config.ConfigFactory
-import io.ktor.server.config.*
 import io.ktor.server.config.yaml.*
 import org.koin.core.annotation.Single
 
@@ -11,5 +9,5 @@ class PropertyConfig {
         YamlConfig(null)
     }
 
-    fun fetchProperty(key: String) = config?.property(key)?.getString()
+    fun fetchProperty(key: String) = config?.property(key)?.getString().orEmpty()
 }

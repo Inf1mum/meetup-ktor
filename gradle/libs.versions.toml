@@ -12,13 +12,15 @@ ktor-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktorVers
 ktor-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktorVersion" }
 ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
 ktor-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktorVersion" }
+ktor-client = { module = "io.ktor:ktor-client-java", version.ref = "ktorVersion" }
+ktor-client-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorVersion" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logbackVersion" }
 koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koinVersion" }
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koinKspVersion" }
 koin-ksp = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koinKspVersion" }
 
 [bundles]
-ktor = ["ktor-core", "ktor-netty", "ktor-negotiation", "ktor-serialization", "ktor-config-yaml"]
+ktor = ["ktor-core", "ktor-netty", "ktor-negotiation", "ktor-serialization", "ktor-config-yaml", "ktor-client", "ktor-client-negotiation"]
 koin = ["koin-ktor", "koin-annotations"]
 logging = ["logback"]
 
