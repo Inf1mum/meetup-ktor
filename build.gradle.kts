@@ -28,5 +28,6 @@ dependencies {
     implementation(libs.bundles.logging)
     implementation(libs.bundles.koin)
     implementation(libs.bundles.mongo)
+    implementation(libs.bundles.kafka)
     ksp(libs.koin.ksp)
 }

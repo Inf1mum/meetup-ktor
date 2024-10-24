@@ -6,6 +6,7 @@ koinVersion = "4.0.0"
 kspVersion = "2.0.20-1.0.25"
 koinKspVersion = "2.0.0-Beta1"
 mongoDriverVersion = "5.2.0"
+kafkaClientVersion = "3.8.0"
 
 [libraries]
 ktor-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktorVersion" }
@@ -21,11 +22,13 @@ koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "
 koin-ksp = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koinKspVersion" }
 mongo-driver = { module = "org.mongodb:mongodb-driver-kotlin-sync", version.ref = "mongoDriverVersion" }
 mongo-serialization = { module = "org.mongodb:bson-kotlinx", version.ref = "mongoDriverVersion" }
+kafka-client = { module = "org.apache.kafka:kafka-clients", version.ref = "kafkaClientVersion" }
 
 [bundles]
 ktor = ["ktor-core", "ktor-netty", "ktor-negotiation", "ktor-serialization", "ktor-config-yaml", "ktor-client", "ktor-client-negotiation"]
 koin = ["koin-ktor", "koin-annotations"]
 mongo = ["mongo-driver", "mongo-serialization"]
+kafka = ["kafka-client"]
 logging = ["logback"]
 
 [plugins]

@@ -10,4 +10,6 @@ class PropertyConfig {
     }
 
     fun fetchProperty(key: String) = config?.property(key)?.getString().orEmpty()
+
+    fun fetchListProperty(key: String) = config?.property(key)?.getList()
 }

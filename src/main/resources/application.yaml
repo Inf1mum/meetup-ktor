@@ -16,3 +16,11 @@ integration:
 mongodb:
     url: "mongodb://localhost:27017"
     database: "test-db"
+
+kafka:
+    bootstrap-servers:
+        - "localhost:29092"
+    topics:
+        user-create:
+            name: "user.create"
+            group-id: "test-group"
