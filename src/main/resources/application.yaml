@@ -12,3 +12,7 @@ integration:
         host: "https://dogapi.dog/api/v2/"
     cat-fact:
         host: "https://catfact.ninja/"
+
+mongodb:
+    url: "mongodb://localhost:27017"
+    database: "test-db"

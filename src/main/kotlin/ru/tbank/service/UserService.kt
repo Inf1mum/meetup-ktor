@@ -11,4 +11,12 @@ class UserService(
     fun findAll(): List<User> {
         return userRepository.findAll()
     }
+
+    fun findById(id: String): User {
+        return userRepository.getById(id)
+    }
+
+    fun save(user: User): User {
+        return userRepository.save(user)
+    }
 }
