@@ -18,19 +18,16 @@ fun Application.userRoutes() {
 
         get("/users/{id}") {
             val id = call.parameters["id"].orEmpty()
-            call.respond(toUserDto(userService.findById(id)))
+            call.respond(toUserDto(userService.getById(id)))
         }
 
         post("/users") {
-            val user = call.receive<UserCreateDto>().let { User(
-                id = null,
-                firstName = it.firstName,
-                lastName = it.lastName,
-                email = it.email
-            ) }
+            val user = toUser(call.receive<UserCreateDto>())
             call.respond(toUserDto(userService.save(user)))
         }
     }
 }
 
-fun toUserDto(user: User) = UserDto(user.id.toString(), user.firstName, user.lastName, user.email)
+private fun toUserDto(user: User) = UserDto(user.id.toString(), user.firstName, user.lastName, user.email)
+
+private fun toUser(dto: UserCreateDto) = User(firstName = dto.firstName, lastName = dto.lastName, email = dto.email)

@@ -1,3 +1,4 @@
+import io.ktor.plugin.features.*
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -17,6 +18,19 @@ tasks.withType<KotlinCompile> {
     compilerOptions {
         jvmTarget = JvmTarget.JVM_21
     }
+}
+
+ktor {
+    docker {
+        jreVersion = JavaVersion.VERSION_21
+        portMappings.set(listOf(
+            DockerPortMapping(8080, 8080, DockerPortMappingProtocol.TCP)
+        ))
+    }
+}
+
+kotlin {
+    jvmToolchain(21)
 }
 
 repositories {

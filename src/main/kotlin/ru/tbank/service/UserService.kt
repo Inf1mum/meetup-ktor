@@ -15,7 +15,7 @@ class UserService(
         return userRepository.findAll()
     }
 
-    fun findById(id: String): User {
+    fun getById(id: String): User {
         return userRepository.getById(id)
     }
 
